@@ -22,8 +22,13 @@ export default function StepLayout({ children }: PropsWithChildren) {
   const { isConnected, address } = useAccount();
   const { chain } = useNetwork();
 
-  const isWrongChain = chain?.id !== ChainId.ArbitrumSepolia;
+  console.log('Chain: ',chain?.id);
+  console.log('Chain: ',Object.values(ChainId));
 
+
+  const isWrongChain =!Object.values(ChainId).includes(chain?.id||ChainId.ArbitrumSepolia);
+
+  console.log('is: ',isWrongChain);
   const shouldShowStepper = currentStep !== RaasProviders;
 
   return (

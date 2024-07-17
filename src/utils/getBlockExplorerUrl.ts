@@ -9,6 +9,8 @@ export function getBlockExplorerUrl(chainId: number) {
 
     case ChainId.ArbitrumSepolia:
       return 'https://sepolia.arbiscan.io';
+    case ChainId.BaseSepolia:
+      return 'https://sepolia.basescan.org';
 
     default:
       throw new Error(`[getBlockExplorerUrl] Unexpected chainId: ${chainId}`);

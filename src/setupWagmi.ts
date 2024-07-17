@@ -6,7 +6,7 @@ import { connectorsForWallets, getDefaultWallets } from '@rainbow-me/rainbowkit'
 import { ChainId } from '@/types/ChainId';
 import { getRpcUrl } from '@/utils/getRpcUrl';
 import { getBlockExplorerUrl } from '@/utils/getBlockExplorerUrl';
-import { ARBITRUM_SEPOLIA_ICON_URL } from './utils/constants';
+import {ARBITRUM_SEPOLIA_ICON_URL, BASE_SEPOLIA_ICON_URL} from './utils/constants';
 
 const arbitrumSepolia = {
   id: ChainId.ArbitrumSepolia,
@@ -34,11 +34,39 @@ const arbitrumSepolia = {
   },
   testnet: true,
 };
+const baseSepolia = {
+  id: ChainId.BaseSepolia,
+  name: 'Base Sepolia',
+  network: 'base-sepolia',
+  iconUrl: BASE_SEPOLIA_ICON_URL,
+  nativeCurrency: {
+    name: 'Ether',
+    symbol: 'ETH',
+    decimals: 18,
+  },
+  rpcUrls: {
+    default: {
+      http: [getRpcUrl(ChainId.BaseSepolia)],
+    },
+    public: {
+      http: [getRpcUrl(ChainId.BaseSepolia)],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Blockscout',
+      url: getBlockExplorerUrl(ChainId.BaseSepolia),
+    },
+  },
+  testnet: true,
+};
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
     // Ideally, we wouldn't need to register the L1s, but there's currently an issue with WalletConnect v2: https://github.com/wagmi-dev/references/issues/225
-    arbitrumSepolia,
+    baseSepolia,
+    arbitrumSepolia
+
   ],
   [publicProvider()],
 );

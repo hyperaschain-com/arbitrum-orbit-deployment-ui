@@ -34,7 +34,7 @@ export const Providers = ({ children }: PropsWithChildren) => {
       <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider
           chains={chains}
-          initialChain={chains[1]}
+          initialChain={chains[0]}
           appInfo={appInfo}
           avatar={CustomAvatar}
           theme={{

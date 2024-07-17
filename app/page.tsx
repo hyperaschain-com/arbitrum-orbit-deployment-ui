@@ -113,18 +113,7 @@ export default function LaunchPage(params: OptionalOrbitPageParams) {
         </Card>
       </div>
 
-      {/* RaaS list */}
-      <div className="flex flex-col gap-4">
-        <Card className="flex flex-col gap-4 bg-default-black text-sm">
-          <div className="text-xl lg:text-3xl">Launch to Mainnet</div>
-          <hr className="opacity-20" />
-          <div className="mb-2 flex w-full flex-col gap-3 text-sm opacity-60">
-            Use a third-party Rollup as a Service providers can help take your testnet orbit chain
-            to mainnet.
-          </div>
-          <RaasProviderGrid />
-        </Card>
-      </div>
+
 
       {/* Orbit SDK link */}
       <Card

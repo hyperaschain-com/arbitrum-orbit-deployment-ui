@@ -10,6 +10,9 @@ export function getRpcUrl(chainId: number) {
     case ChainId.ArbitrumSepolia:
       return 'https://sepolia-rollup.arbitrum.io/rpc';
 
+    case ChainId.BaseSepolia:
+      return 'https://sepolia.base.org';
+
     default:
       throw new Error(`[getRpcUrl] Unexpected chainId: ${chainId}`);
   }
